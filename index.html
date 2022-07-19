@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zack Venables</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.142.0/build/three.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="/index.js"></script>
+
+    <!-- Navigation Bar-->
+<nav>
+    <ul>
+        <li><a class="active" href="#home">Zack Venables</a></li>
+        <img class="logo" src="./imgs/robo2-removebg-preview.png"></img>
+        <li><a href="#news">Projects</a></li>
+        <li><a href="#contact">Github</a></li>
+        <li><a href="#about">About</a></li>
+
+    </ul>
+    <button id="btn" class="dark-btn" onclick="myFunction()">Light</button>
+</nav>
+
+    
+
+
+    <div id="intro">
+        <canvas class="webgl"></canvas>
+        <box id="box">
+            Hello! I am a developer based in Australia!
+
+        </box>
+        <h1>
+            Zack Venables
+        </h1>
+        <p id="subtitle">
+            Digitial Craftsman ( Designer / Developer / Engineer )
+        </p>
+        <h2 id="work">
+            Work/Studies
+        </h2>
+        <p id="work-txt">
+            I am student based in Brisbane currently studying computer science with a passion for building/designing
+            front-end applications.
+            I currently work for a health care company as a software engineer whilst I complete my university degree.
+        </p>
+        <h2 id="bio">
+            Bio
+        </h2>
+        <h2 id="hobbies">
+            Hobbies
+        </h2>
+
+    </div>
+    <script>
+
+
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("light-mode");
+        }
+
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+
+            if (btn.innerText === "Light") {
+                btn.innerText = "Dark";
+            } else {
+                btn.innerText = "Light";
+            }
+        });
+
+        let index = 0;
+
+        const colors = ['#3b3b49', '#e8e8e8'];
+
+        btn.addEventListener('click', function onClick() {
+            btn.style.backgroundColor = colors[index];
+            if (btn.innerText === "Dark") {
+                btn.style.color = '#e8e8e8';
+            } else {
+                btn.style.color = '#3b3b49';
+            }
+
+
+            index = index >= colors.length - 1 ? 0 : index + 1;
+        });
+
+
+
+    </script>
+</body>
+
+</html>
